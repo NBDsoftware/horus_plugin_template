@@ -1,0 +1,57 @@
+name: Build and Upload Plugin
+
+on:
+  workflow_dispatch:
+    inputs:
+      plugin_version:
+        description: "Version to set in plugin.meta"
+        required: true
+
+jobs:
+  build_and_upload:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install dependencies (bun)
+        run: bun install
+
+      - name: Set plugin version in plugin.meta
+        run: |
+          VERSION_INPUT="${{ github.event.inputs.plugin_version }}"
+          if [[ -z "$VERSION_INPUT" ]]; then
+            echo "Error: plugin_version input is required and cannot be empty."
+            exit 1
+          fi
+          sed -i.bak -E "s/^version: .*/version: $VERSION_INPUT/" hitss/plugin.meta
+          rm hitss/plugin.meta.bak
+
+      - name: Build and package plugin
+        run: bash devtools/build-plugin.sh
+
+      - name: Set plugin version in plugin.meta
+        run: |
+          VERSION_INPUT="${{ github.event.inputs.plugin_version }}"
+          if [[ -z "$VERSION_INPUT" ]]; then
+            echo "Error: plugin_version input is required and cannot be empty."
+            exit 1
+          fi
+          sed -i.bak -E "s/^version: .*/version: $VERSION_INPUT/" hitss/plugin.meta
+          rm hitss/plugin.meta.bak
+
+      - name: Upload plugin to repository
+        uses: NBDsoftware/gh-actions/upload-hp-file@6520c56ce1c688ff8d2c51d749d59a356d9b53c3
+        with:
+          SERVER_URL: https://repo.nostrumbiodiscovery.com/plugins/
+          PLUGIN_REPO_TOKEN: ${{ secrets.PLUGIN_REPO_TOKEN }}
+          DESCRIPTION: Plugin ${{ github.event.inputs.plugin_version }}
+          HP_FILE: hitss.zip

@@ -1,0 +1,79 @@
+[project]
+name = "hitss"
+version = "0.1.0"
+description = "High throughput substructure search."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+  "flask>=3.1.3",
+  "horusapi>=0.9.0",
+  "mypy>=1.20.2",
+  "pre-commit>=4.6.0",
+  "pydantic>=2.13.3",
+  "pytest>=7.0.0",
+  "pytest-cov>=7.1.0",
+  "ruff>=0.15.12",
+]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+exclude = ["build", "dist"]
+
+[tool.pytest]
+addopts = [
+  "--cov-fail-under=90",
+  "--cov-report=html",
+  "--cov-report=term-missing",
+  "--cov=molecular_database_horus",
+  "--verbose",
+]
+minversion = "7.0"
+python_classes = ["Test*"]
+python_files = ["*_test.py", "test_*.py"]
+python_functions = ["test_*"]
+testpaths = ["tests/backend"]
+
+[tool.ruff]
+line-length = 79
+target-version = "py312"
+exclude = [".git", ".venv", "build", "dist", "__pycache__"]
+
+[tool.ruff.lint]
+select = [
+  "D",  # pydocstyle
+  "E",  # pycodestyle errors
+  "W",  # pycodestyle warnings
+  "F",  # pyflakes
+  "I",  # isort
+  "N",  # pep8-naming
+  "UP",  # pyupgrade
+  "B",  # flake8-bugbear
+  "PL",  # pylint
+  "RUF",  # ruff-specific
+  "ARG",  # ruff-arglint
+  "SLF",  # ruff-slf
+]
+
+ignore = [
+  "E203",  # Whitespace before ':', conflicts with formatter
+  "D104",  # Missing docstring in class __init__
+  "D107",  # Missing docstring in __init__.py
+  "D205",  # 1 blank line required between summary line and description
+  "D212",  # Multi-line docstring summary should start at the first line
+  "D200",  # One-line docstring should fit on one line
+  "PLC0415",  # Imports outside toplevel
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["SLF001"]  # Allow private method access in tests
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

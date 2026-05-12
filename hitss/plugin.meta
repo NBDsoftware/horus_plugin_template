@@ -1,0 +1,16 @@
+{
+    "id": "hitss",
+    "name": "HITSS",
+    "description": "High throughput substructure search.",
+    "author": "Nostrum Biodiscovery",
+    "version": "0.0.1",
+    "pluginFile": "plugin.py",
+    "minHorusVersion": "0.9.0",
+    "maxHorusVersion": null,
+    "platforms": [
+        "universal"
+    ],
+    "externalURL": null,
+    "dependencies": [],
+    "pluginRequires": []
+}
