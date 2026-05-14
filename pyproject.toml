@@ -1,7 +1,7 @@
 [project]
-name = "hitss"
+name = "my_plugin"
 version = "0.1.0"
-description = "High throughput substructure search."
+description = "My plugin for Horus."
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = []
@@ -28,7 +28,7 @@ addopts = [
   "--cov-fail-under=90",
   "--cov-report=html",
   "--cov-report=term-missing",
-  "--cov=molecular_database_horus",
+  "--cov=my_plugin",
   "--verbose",
 ]
 minversion = "7.0"

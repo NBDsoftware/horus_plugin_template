@@ -1,7 +1,7 @@
 {
-    "id": "hitss",
-    "name": "HITSS",
-    "description": "High throughput substructure search.",
+    "id": "my_plugin",
+    "name": "my_plugin",
+    "description": "My plugin for Horus.",
     "author": "Nostrum Biodiscovery",
     "version": "0.0.1",
     "pluginFile": "plugin.py",

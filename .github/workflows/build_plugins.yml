@@ -32,8 +32,8 @@ jobs:
             echo "Error: plugin_version input is required and cannot be empty."
             exit 1
           fi
-          sed -i.bak -E "s/^version: .*/version: $VERSION_INPUT/" hitss/plugin.meta
-          rm hitss/plugin.meta.bak
+          sed -i.bak -E "s/^version: .*/version: $VERSION_INPUT/" my_plugin/plugin.meta
+          rm my_plugin/plugin.meta.bak
 
       - name: Build and package plugin
         run: bash devtools/build-plugin.sh
@@ -45,8 +45,8 @@ jobs:
             echo "Error: plugin_version input is required and cannot be empty."
             exit 1
           fi
-          sed -i.bak -E "s/^version: .*/version: $VERSION_INPUT/" hitss/plugin.meta
-          rm hitss/plugin.meta.bak
+          sed -i.bak -E "s/^version: .*/version: $VERSION_INPUT/" my_plugin/plugin.meta
+          rm my_plugin/plugin.meta.bak
 
       - name: Upload plugin to repository
         uses: NBDsoftware/gh-actions/upload-hp-file@6520c56ce1c688ff8d2c51d749d59a356d9b53c3
@@ -54,4 +54,4 @@ jobs:
           SERVER_URL: https://repo.nostrumbiodiscovery.com/plugins/
           PLUGIN_REPO_TOKEN: ${{ secrets.PLUGIN_REPO_TOKEN }}
           DESCRIPTION: Plugin ${{ github.event.inputs.plugin_version }}
-          HP_FILE: hitss.zip
+          HP_FILE: my_plugin.zip

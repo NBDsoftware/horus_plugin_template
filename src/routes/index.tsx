@@ -10,21 +10,7 @@ function Home() {
 				<Stack gap={64}>
 					{/* Header */}
 					<Stack gap={16}>
-						<Title order={1}>
-							HITSS <Text component="span">Database</Text>
-						</Title>
-
-						<Text
-							style={{
-								fontSize: "1.05rem",
-								maxWidth: 480,
-								lineHeight: 1.7,
-								fontFamily: "monospace",
-							}}
-						>
-							Structure browsing, property analysis, and similarity search —
-							integrated directly into your Horus workflow.
-						</Text>
+						<Title order={1}>My Plugin</Title>
 					</Stack>
 
 					{/* Footer line */}

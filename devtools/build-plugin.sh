@@ -6,7 +6,7 @@ echo "Building plugin with Bun and packaging..."
 bun run build
 
 # Remove old package if exists
-rm -f hitss.zip
+rm -f my_plugin.zip
 
-# Package the hitss directory as hitss.zip
-zip -r hitss.zip hitss
+# Package the my_plugin directory as my_plugin.zip
+zip -r my_plugin.zip my_plugin

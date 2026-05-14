@@ -16,7 +16,7 @@ const config = defineConfig(({ mode }) => {
 		server: {
 			proxy: {
 				"/api": {
-					target: "http://127.0.0.1:3000/plugins/pages/hitss.hitss-api/",
+					target: "http://127.0.0.1:3000/plugins/pages/my_plugin.my_plugin-api/",
 					changeOrigin: true,
 				},
 			},
@@ -24,7 +24,7 @@ const config = defineConfig(({ mode }) => {
 		resolve: { tsconfigPaths: true },
 		plugins: [devtools(), tailwindcss(), viteReact(), tanstackRouter()],
 		build: {
-			outDir: resolve(__dirname, "hitss", "Pages"),
+			outDir: resolve(__dirname, "my_plugin", "Pages"),
 			emptyOutDir: true,
 			rollupOptions: {
 				input: {

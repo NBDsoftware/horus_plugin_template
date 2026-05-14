@@ -1,6 +1,6 @@
 {
 	"python.analysis.extraPaths": [
-		"molecular-database/Include",
+		"my_plugin/Include",
 		"HORUS_PLUGINS_DIR"
 	],
 	"search.exclude": {
