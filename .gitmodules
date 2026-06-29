@@ -1,0 +1,3 @@
+[submodule "plugin_dependencies/horus"]
+	path = plugin_dependencies/horus
+	url = git@github.com:BSC-CNS-EAPM/horus.git
