@@ -36,7 +36,7 @@ bun --bun run lint / format / check   # biome
 ./devtools/run-horus-debug.sh   # launches Horus with HORUS_PLUGINS_DIR set, debugpy listening on :5678
 ```
 
-Equivalently, press F5 in VS Code or run the "Debug Plugin Load" launch config (`.vscode/launch.json`), which runs the `debug-horus` task first and waits for the debugger port to open. "Auto-attach Flow Process" attaches to a Slurm/flow subprocess on port `:5679` when one spawns.
+Equivalently, press F5 in VS Code or run the "Debug Plugin Load" launch config (`.vscode/launch.json`), which runs the `debug-horus` task first and waits for the debugger port to open. "Auto-attach Flow Process" attaches to a Flow subprocess on port `:5679` when one spawns.
 
 ### Building/packaging the distributable plugin
 
