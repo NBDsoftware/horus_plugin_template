@@ -2,6 +2,21 @@
 
 This is a template for a Horus plugin that contains frontend and backend components and includes the development tooling used in this repository.
 
+# Creating a new plugin from this template
+
+To start a new Horus plugin based on this template repo:
+
+1. On GitHub, create a new repository and select this repository as a template in the `2. Configuration` section, under `Start with a template`.
+2. Choose an owner and a name for your new repository.
+3. Set the visibility (public/private) as needed and click **Create repository**.
+4. Clone your new repository locally.
+5. Rename all occurrences of `my_plugin` (folders, files, and code references) to your plugin's name.
+6. Update this README, the ``.claude/CLAUDE.md`` file, the ``pyproject.toml``, and the ``plugin.meta`` file to reflect your plugin's details.
+
+# Working with Claude
+
+Find more detailed information in the [Claude README](.claude/README.md) file.
+
 # Backend
 You can check the backend documentation in the [BACKEND.md](./BACKEND.md) file
 
@@ -17,7 +32,7 @@ folder to the list of development plugins within Horus.
 
 Instead of adding the current plugin path, you can add at once the current plugin
 and all its plugin dependencies by adding the folder path of ``HORUS_PLUGINS_DIR``.
-WARNING: Make sure to add the symbolic links to the plugin backend folder (where
+**WARNING**: Make sure to add the symbolic links to the plugin backend folder (where
 `Include` folder lives), not the repo root folder.
 
 So, inside this folder, you need to add the symbolic links to the current plugin
