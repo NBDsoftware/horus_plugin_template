@@ -2,6 +2,6 @@
 
 echo "Building plugin..."
 
-rm test_plugin.hp
+rm my_plugin.hp
 
-zip -r test_plugin.hp test_plugin
+zip -r my_plugin.hp my_plugin
