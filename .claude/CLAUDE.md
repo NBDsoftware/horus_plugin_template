@@ -2,6 +2,9 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+**IMPORTANT:** ADAPT THIS FILE TO YOUR PROJECT. ESPECIALLY REGARDING PROJECT DESCRIPTIONS
+AND DIRECTORY STRUCTURE.
+
 ## What this repo is
 
 A template for a **Horus plugin**: a Python backend (`my_plugin/`) built on `HorusAPI`, paired with a React frontend (`src/`) that gets built and embedded as the plugin's page. New plugins are created by using this repo as a GitHub template, then renaming every `my_plugin` occurrence (folder, `pyproject.toml`, `plugin.meta`, imports) to the new plugin's name.
